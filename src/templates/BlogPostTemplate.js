@@ -13,13 +13,13 @@ class BlogPostTemplate extends React.Component {
     const { children, data, ...props } = this.props;
     const post = data.mdx
     const {code: {body}, frontmatter: {title, date}, excerpt} = post;
-    const siteTitle = get(data, 'site.siteMetadata.title')
+    const siteTitle = get(data, 'site.siteMetadata.title');
+    const { pageContext: {nextPage, previousPage} } = this.props;
     // const { previous, next } = this.props.pageContext
 
     return (
       <MDXProvider
         components={{}}>
-        }}
         <Layout location={this.props.location}>
           <Helmet
             htmlAttributes={{ lang: 'en' }}
@@ -39,25 +39,25 @@ class BlogPostTemplate extends React.Component {
           />
           <Bio />
 
-          {/*<ul*/}
-          {/*>*/}
-            {/*<li>*/}
-              {/*{*/}
-                {/*previous &&*/}
-                {/*<Link to={previous.fields.slug} rel="prev">*/}
-                  {/*← {previous.frontmatter.title}*/}
-                {/*</Link>*/}
-              {/*}*/}
-            {/*</li>*/}
-            {/*<li>*/}
-              {/*{*/}
-                {/*next &&*/}
-                {/*<Link to={next.fields.slug} rel="next">*/}
-                  {/*{next.frontmatter.title} →*/}
-                {/*</Link>*/}
-              {/*}*/}
-            {/*</li>*/}
-          {/*</ul>*/}
+          <ul
+          >
+            <li>
+              {
+                previousPage &&
+                <Link to={'/post' + previousPage.fields.slug} rel="prev">
+                  ← {previousPage.frontmatter.title}
+                </Link>
+              }
+            </li>
+            <li>
+              {
+                nextPage &&
+                <Link to={'/post' + nextPage.fields.slug} rel="next">
+                  {nextPage.frontmatter.title} →
+                </Link>
+              }
+            </li>
+          </ul>
         </Layout>
       </MDXProvider>
     )
@@ -80,10 +80,12 @@ export const pageQuery = graphql`
         code {
             body
         }
+        
         frontmatter {
             title
             date(formatString: "MMM DD, YYYY")
         }
+        
     }
   }
 `

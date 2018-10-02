@@ -26,6 +26,9 @@ exports.createPages = ({ graphql, actions }) => {
                   code {
                     scope
                   }
+                  frontmatter {
+                    title
+                  }
                   fields{
                     slug
                   }
@@ -41,17 +44,25 @@ exports.createPages = ({ graphql, actions }) => {
         }
 
         // Create blog posts pages.
-        result.data.allMdx.edges.forEach(({ node }) => {
+        result.data.allMdx.edges.forEach(({ node }, index) => {
           const pagePath = '/post' + node.fields.slug;
           const component = componentWithMDXScope(
             path.resolve("./src/templates/BlogPostTemplate.js"),
             node.code.scope,
             __dirname
           );
+
+          const previousPageNode = result.data.allMdx.edges[index - 1] || {node: null};
+          const { node: previousPage } = previousPageNode;
+
+          const nextPageNode = result.data.allMdx.edges.length > (index + 1) ? result.data.allMdx.edges[index + 1] : {node: null};
+          const { node: nextPage } = nextPageNode;
           const context = {
             absPath: node.parent.absolutePath,
             tableOfContents: node.tableOfContents,
-            id: node.id
+            id: node.id,
+            previousPage,
+            nextPage
           };
 
           createPage({
