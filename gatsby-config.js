@@ -7,7 +7,12 @@ module.exports = {
   },
   pathPrefix: '/gatsby-starter-blog',
   plugins: [
-    'gatsby-mdx',
+    {
+      resolve: `gatsby-mdx`,
+      options: {
+        extensions: [".mdx"],
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -44,5 +49,6 @@ module.exports = {
         pathToConfigModule: 'src/utils/typography',
       },
     },
+    'gatsby-plugin-extract-schema',
   ],
 }
