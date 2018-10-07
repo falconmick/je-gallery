@@ -1,3 +1,5 @@
+// const mdxFeed = require("gatsby-mdx/feed");
+
 module.exports = {
   siteMetadata: {
     title: 'Gatsby Starter Blog',
@@ -38,7 +40,10 @@ module.exports = {
         //trackingId: `ADD YOUR TRACKING ID HERE`,
       },
     },
-    `gatsby-plugin-feed`,
+    // {
+    //   resolve: `gatsby-plugin-feed`,
+    //   options: mdxFeed
+    // },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -60,6 +65,7 @@ module.exports = {
       },
     },
     'gatsby-plugin-extract-schema',
+    `gatsby-plugin-emotion`,
     'gatsby-plugin-netlify',
   ],
 }
