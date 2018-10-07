@@ -60,5 +60,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-extract-schema',
+    'gatsby-plugin-netlify',
   ],
 }
