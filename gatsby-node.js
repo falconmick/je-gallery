@@ -45,7 +45,7 @@ exports.createPages = ({ graphql, actions }) => {
 
         // Create blog posts pages.
         result.data.allMdx.edges.forEach(({ node }, index) => {
-          const pagePath = '/post' + node.fields.slug;
+          const pagePath = node.fields.slug;
           const component = componentWithMDXScope(
             path.resolve("./src/templates/BlogPostTemplate.js"),
             node.code.scope,

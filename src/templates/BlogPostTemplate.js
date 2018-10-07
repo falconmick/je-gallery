@@ -44,7 +44,7 @@ class BlogPostTemplate extends React.Component {
             <li>
               {
                 previousPage &&
-                <Link to={'/post' + previousPage.fields.slug} rel="prev">
+                <Link to={previousPage.fields.slug} rel="prev">
                   ← {previousPage.frontmatter.title}
                 </Link>
               }
@@ -52,7 +52,7 @@ class BlogPostTemplate extends React.Component {
             <li>
               {
                 nextPage &&
-                <Link to={'/post' + nextPage.fields.slug} rel="next">
+                <Link to={nextPage.fields.slug} rel="next">
                   {nextPage.frontmatter.title} →
                 </Link>
               }
