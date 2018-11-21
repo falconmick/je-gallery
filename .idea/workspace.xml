@@ -21,7 +21,7 @@
     <session id="-253534578">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.2" value="2" />
           <entry key="project.open.time.29" value="1" />
@@ -118,7 +118,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gatsby-config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="74">
+            <state relative-caret-position="375">
               <caret line="42" selection-start-line="42" selection-end-line="45" selection-end-column="9" />
               <folding>
                 <element signature="e#338#623#0" />
@@ -325,16 +325,15 @@
       <workItem from="1538476080794" duration="10866000" />
       <workItem from="1538488078206" duration="7240000" />
       <workItem from="1538534469223" duration="4000" />
-      <workItem from="1538924832007" duration="2907000" />
+      <workItem from="1538924832007" duration="3036000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21017000" />
+    <option name="totallyTimeSpent" value="21146000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.43269908" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -551,7 +550,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gatsby-config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
+        <state relative-caret-position="375">
           <caret line="42" selection-start-line="42" selection-end-line="45" selection-end-column="9" />
           <folding>
             <element signature="e#338#623#0" />
